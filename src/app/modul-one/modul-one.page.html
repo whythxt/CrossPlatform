@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Модульний контроль №1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав студент групи КН-32 Знахарчук Ю.В.</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-title size="large">Завдання</ion-title>
+      <p>Розробити сервіс для знаходження значень похідних елементарних функцій</p>
+    </ion-card-header>
+
+    <ion-card-content>
+      <app-derivative-input (derivativeCalculated)="onDerivativeCalculated($event)"></app-derivative-input>
+      <div *ngIf="calculatedDerivative">
+        <p>Результат обчислення похідної: {{ calculatedDerivative.value }}</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

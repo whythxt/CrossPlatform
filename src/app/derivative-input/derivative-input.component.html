@@ -1,0 +1,18 @@
+<form [formGroup]="derivativeForm" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label position="stacked">f(x)</ion-label>
+    <ion-input formControlName="fx" type="text" placeholder="Введіть функцію f(x)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">x<sub>0</sub></ion-label>
+    <ion-input formControlName="x0" type="number" placeholder="Введіть точку x0"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">h</ion-label>
+    <ion-input formControlName="h" type="number" placeholder="Введіть крок h"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" type="submit" [disabled]="!derivativeForm.valid">Обчислити похідну</ion-button>
+</form>

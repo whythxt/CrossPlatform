@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №4
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав студент групи КН-32 Знахарчук Ю.В.</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-title size="large">Завдання</ion-title>
+      <p>Скласти програму з абстрактним батьківським класом і двома об'єктами – нащадками.</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-radio-group [(ngModel)]="selectedVectorType">
+        <ion-list-header>
+          <ion-label>Тип вектора</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Двовимірний</ion-label>
+          <ion-radio value="twoD"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Тривимірний</ion-label>
+          <ion-radio value="threeD"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+      <ion-item *ngIf="selectedVectorType === 'twoD'">
+        <ion-label position="floating">Координати (x, y)</ion-label>
+        <ion-input type="number" [(ngModel)]="xCoordinate"></ion-input>
+        <ion-input type="number" [(ngModel)]="yCoordinate"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="selectedVectorType === 'threeD'">
+        <ion-label position="floating">Координати (x, y, z)</ion-label>
+        <ion-input type="number" [(ngModel)]="xCoordinate"></ion-input>
+        <ion-input type="number" [(ngModel)]="yCoordinate"></ion-input>
+        <ion-input type="number" [(ngModel)]="zCoordinate"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="calculateLength()">Розрахувати довжину вектора</ion-button>
+
+      <ion-item *ngIf="result !== null">
+        <ion-label>Довжина вектора:</ion-label>
+        <ion-text>{{ result }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-title size="large">Вектори</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let vector of vectors">
+          <ion-label>
+            <h2>{{ vector.name }}</h2>
+            <p>Довжина: {{ vector.getLength() }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <p>Сумарна довжина векторів: {{ totalLength }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
