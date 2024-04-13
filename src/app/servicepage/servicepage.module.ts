@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { InterfacepagePageRoutingModule } from './interfacepage-routing.module';
-
-import { InterfacepagePage } from './interfacepage.page';
+import { ServicepagePageRoutingModule } from './servicepage-routing.module';
+import { ServicepagePage } from './servicepage.page';
 import { MyHeaderModule } from '../my-header/my-header.component.module';
 
 @NgModule({
@@ -14,9 +11,9 @@ import { MyHeaderModule } from '../my-header/my-header.component.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    InterfacepagePageRoutingModule,
+    ServicepagePageRoutingModule,
     MyHeaderModule
   ],
-  declarations: [InterfacepagePage]
+  declarations: [ServicepagePage]
 })
-export class InterfacepagePageModule {}
+export class ServicepagePageModule {}

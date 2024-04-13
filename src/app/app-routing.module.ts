@@ -25,6 +25,14 @@ const routes: Routes = [
   {
     path: 'modul-one',
     loadChildren: () => import('./modul-one/modul-one.module').then( m => m.ModulOnePageModule)
+  },
+  {
+    path: 'servicepage',
+    loadChildren: () => import('./servicepage/servicepage.module').then( m => m.ServicepagePageModule)
+  },
+  {
+    path: 'react-form',
+    loadChildren: () => import('./react-form/react-form.module').then( m => m.ReactFormPageModule)
   }
 ];
 @NgModule({

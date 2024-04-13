@@ -1,0 +1,51 @@
+<form [formGroup]="readerForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Читач</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">ID: </ion-label>
+        <ion-input id="reader-id" type="number" formControlName="readerID"></ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Ім'я: </ion-label>
+        <ion-input id="reader-name" type="text" formControlName="readerName"></ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Адреса: </ion-label>
+        <ion-input id="reader-address" type="text" formControlName="readerAddress"></ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Номер телефону: </ion-label>
+        <ion-input id="reader-phone" type="number" formControlName="readerPhone"></ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Почта: </ion-label>
+        <ion-input id="reader-email" type="text" formControlName="readerEmail"></ion-input> 
+      </ion-item>
+      <ion-card formArrayName="books">
+        <ion-card-header>
+          <ion-card-title>Kниги</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button color="tertiary" (click)="addBook()">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Додати книгу
+          </ion-button>
+          <ion-item *ngFor="let book of getControls(); let i = index">
+            <ion-input type="text" formControlName={{i}} placeholder="Назва книги"></ion-input> 
+
+              <ion-button color="tertiary" (click)="deleteBook(i)">
+                <ion-icon slot="start" name="trash"></ion-icon>
+                Видалити
+              </ion-button>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+  <ion-button type="submit" color="my-color" expand="block" fill="outline" [disabled]="!readerForm.valid">
+    Submit
+  </ion-button>
+</form>
