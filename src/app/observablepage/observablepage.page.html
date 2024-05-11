@@ -1,0 +1,47 @@
+<app-my-header name="Лабораторна робота №9"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-button (click)="nextGenre()">Наступний жанр</ion-button>
+
+    <ion-label>
+      Поточний жанр:
+    </ion-label>
+
+    <ion-label>
+      {{genre.name}}
+    </ion-label>
+
+  </ion-item>
+
+  <ion-item *ngFor="let movie of movieList.searchMovieResult; let j = index">
+    {{movie}}
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Введіть новий жанр</ion-label>
+    <ion-input #InputGenre></ion-input>
+    <ion-button (click)="addGenre(InputGenre.value)">Додати жанр</ion-button>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header>
+        <ion-card-title>
+            Додати фільм
+        </ion-card-title> 
+    </ion-card-header>
+
+    <ion-card-content>
+        <ion-label position="stacked">Введіть назву</ion-label>
+        <ion-input #InputName></ion-input>
+        <ion-label position="stacked">Введіть режисера</ion-label>
+        <ion-input #InputAuthor></ion-input>
+        <ion-label position="stacked">Введіть рік видання</ion-label>
+        <ion-input #InputYear></ion-input>
+        <ion-label position="stacked">Введіть рейтинг</ion-label>
+        <ion-input #InputRating></ion-input>
+        <ion-button (click)="addMovie(InputName.value, InputAuthor.value, InputYear.value, InputRating.value)">Додати фільм</ion-button>
+    </ion-card-content>
+</ion-card>
+
+</ion-content>

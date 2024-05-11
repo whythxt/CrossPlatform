@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'react-form',
     loadChildren: () => import('./react-form/react-form.module').then( m => m.ReactFormPageModule)
+  },
+  {
+    path: 'observablepage',
+    loadChildren: () => import('./observablepage/observablepage.module').then( m => m.ObservablepagePageModule)
   }
 ];
 @NgModule({

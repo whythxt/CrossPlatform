@@ -27,7 +27,7 @@ export class UpdateformComponent  implements OnInit {
     if (NumberValidator.isValidEmail(emailControl) == null && NumberValidator.isValidPhone(phoneControl) == null) {
       this.reader = new Reader(this.reader.id, name, addr, phn, mail, this.reader.books);
       this.readerChange.emit(this.reader);
-      this.showChange.emit(this.show); 
+      this.showChange.emit(this.show);
     } else {
       throw Error("Validator error");
     }
